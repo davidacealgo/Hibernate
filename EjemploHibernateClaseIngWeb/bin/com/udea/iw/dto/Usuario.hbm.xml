@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/03/2017 01:20:52 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.udea.iw.dto.Usuario" table="usuarios"><!-- Nombre de como se llame la tabla -->
+        <id name="login" type="java.lang.String"><!--  Nombre de como está el atributo en la clase -->
+            <column name="LOGIN" length="12" not-null="true"/>
+            <generator class="assigned" />
+        </id>
+        <property name="nombres" type="java.lang.String">
+            <column name="NOMBRES" length="45" not-null="false"/> <!-- Propiedades de cada fila de la tabla en la BD -->
+        </property>
+        <property name="apellidos" type="java.lang.String">
+            <column name="APELLIDOS" length="45" not-null="false"/> <!-- Propiedades de cada fila de la tabla en la BD -->
+        </property>
+        <property name="contrasena" type="java.lang.String">
+            <column name="CONTRASENA" length="125" not-null="false"/> <!-- Propiedades de cada fila de la tabla en la BD -->
+        </property>
+        <many-to-one class="com.udea.iw.dto.Rol" name="rol">
+            <column name="ROL" length="12" not-null="false"/> <!-- Propiedades de cada fila de la tabla en la BD -->
+        </many-to-one>
+      
+    </class>
+</hibernate-mapping>
